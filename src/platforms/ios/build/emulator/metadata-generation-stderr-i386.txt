@@ -1,0 +1,373 @@
+clang version 3.9.0 (tags/RELEASE_390/final)
+Target: i386-apple-darwin16.4.0
+Thread model: posix
+InstalledDir: 
+clang Invocation:
+ "clang-tool" "-cc1" "-triple" "i386-apple-ios8.0.0" "-fsyntax-only" "-disable-free" "-disable-llvm-verifier" "-discard-value-names" "-main-file-name" "umbrella.h" "-mrelocation-model" "pic" "-pic-level" "2" "-mthread-model" "posix" "-mdisable-fp-elim" "-masm-verbose" "-target-cpu" "yonah" "-target-linker-version" "264.3.102" "-v" "-dwarf-column-info" "-debugger-tuning=lldb" "-resource-dir" "../lib/clang/3.9.0" "-isysroot" "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.1.sdk" "-isystem" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public" "-isystem" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public/SciChart" "-I" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/build/emulator/include" "-I" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public" "-I" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public/SciChart" "-I" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/internal" "-F/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/build/emulator" "-F/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart" "-F/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/internal/" "-F/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/../../node_modules/tns-core-modules-widgets/platforms/ios" "-D" "COCOAPODS=1" "-D" "DEBUG=1" "-Wno-unknown-pragmas" "-Wno-ignored-attributes" "-Wno-nullability-completeness" "-Wno-expansion-to-defined" "-std=gnu99" "-fdebug-compilation-dir" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/internal/metadata-generator/bin" "-ferror-limit" "0" "-fmessage-length" "0" "-stack-protector" "1" "-fblocks" "-fimplicit-module-maps" "-fobjc-runtime=ios-8.0.0" "-fencode-extended-block-signature" "-fobjc-exceptions" "-fexceptions" "-fmax-type-align=16" "-fdiagnostics-show-option" "-x" "objective-c" "umbrella.h"
+
+ignoring nonexistent directory "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/build/emulator/include"
+ignoring nonexistent directory "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public"
+ignoring nonexistent directory "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public/SciChart"
+ignoring nonexistent directory "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public"
+ignoring nonexistent directory "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public/SciChart"
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.1.sdk/usr/local/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/internal
+ /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/build/emulator (framework directory)
+ /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart (framework directory)
+ /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/internal (framework directory)
+ /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/../../node_modules/tns-core-modules-widgets/platforms/ios (framework directory)
+ ../lib/clang/3.9.0/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.1.sdk/usr/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.1.sdk/System/Library/Frameworks (framework directory)
+ /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.1.sdk/Library/Frameworks (framework directory)
+End of search list.
+clang version 3.9.0 (tags/RELEASE_390/final)
+Target: i386-apple-darwin16.4.0
+Thread model: posix
+InstalledDir: 
+clang Invocation:
+ "objc-metadata-generator" "-cc1" "-triple" "i386-apple-ios8.0.0" "-fsyntax-only" "-disable-free" "-disable-llvm-verifier" "-discard-value-names" "-main-file-name" "umbrella.h" "-mrelocation-model" "pic" "-pic-level" "2" "-mthread-model" "posix" "-mdisable-fp-elim" "-masm-verbose" "-target-cpu" "yonah" "-target-linker-version" "264.3.102" "-v" "-dwarf-column-info" "-debugger-tuning=lldb" "-resource-dir" "../lib/clang/3.9.0" "-isysroot" "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.1.sdk" "-isystem" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public" "-isystem" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public/SciChart" "-I" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/build/emulator/include" "-I" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public" "-I" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public/SciChart" "-I" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/internal" "-F/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/build/emulator" "-F/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart" "-F/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/internal/" "-F/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/../../node_modules/tns-core-modules-widgets/platforms/ios" "-D" "COCOAPODS=1" "-D" "DEBUG=1" "-Wno-unknown-pragmas" "-Wno-ignored-attributes" "-Wno-nullability-completeness" "-Wno-expansion-to-defined" "-std=gnu99" "-fdebug-compilation-dir" "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/internal/metadata-generator/bin" "-ferror-limit" "0" "-fmessage-length" "0" "-stack-protector" "1" "-fblocks" "-fimplicit-module-maps" "-fobjc-runtime=ios-8.0.0" "-fencode-extended-block-signature" "-fobjc-exceptions" "-fexceptions" "-fmax-type-align=16" "-fdiagnostics-show-option" "-x" "objective-c" "umbrella.h"
+
+clang -cc1 version 3.9.0 based upon LLVM 3.9.0 default target x86_64-apple-darwin16.4.0
+ignoring nonexistent directory "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/build/emulator/include"
+ignoring nonexistent directory "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public"
+ignoring nonexistent directory "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public/SciChart"
+ignoring nonexistent directory "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public"
+ignoring nonexistent directory "/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/Headers/Public/SciChart"
+ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.1.sdk/usr/local/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/internal
+ /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/build/emulator (framework directory)
+ /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart (framework directory)
+ /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/internal (framework directory)
+ /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/../../node_modules/tns-core-modules-widgets/platforms/ios (framework directory)
+ ../lib/clang/3.9.0/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.1.sdk/usr/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.1.sdk/System/Library/Frameworks (framework directory)
+ /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.1.sdk/Library/Frameworks (framework directory)
+End of search list.
+In file included from umbrella.h:652:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SciChart.h:22:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCITickCoordinatesProviderDefault.h:11:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIAxis2D.h:15:
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIAxisCore.h:438:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) SCIAxisResizeAnimationHelper * animationController;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIAxisCore.h:438:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIAxisCore.h:443:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) SCIRangeChangedCallbackHandler * rangeCallbackHandler;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIAxisCore.h:443:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:652:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SciChart.h:26:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIAxisBase.h:16:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemebleProtocol.h:10:
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:18:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIFont *chartTitleFont;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:18:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:19:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIColor *chartTitleColor;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:19:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:20:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> backgroundBrush;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:20:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:21:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> borderPen;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:21:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:22:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> seriesBackgroundBrush;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:22:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:25:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> errorBarsLinePenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:25:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:26:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> errorBarsHighPenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:26:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:27:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> errorBarsLowPenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:27:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:28:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> bubbleBrushStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:28:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:29:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> bubblePenBorderStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:29:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:30:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> impulseLinePenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:30:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:31:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> mountainAreaBrushStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:31:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:32:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> mountainBorderPenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:32:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:33:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> stackedMountainAreaBrushStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:33:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:34:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> stackedMountainBorderPenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:34:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:35:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> stackedColumnBorderPenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:35:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:36:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> stackedColumnFillBrushStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:36:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:37:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> columnBorderPenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:37:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:38:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> columnFillBrushStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:38:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:39:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> bandPen1Style;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:39:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:40:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> bandPen2Style;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:40:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:41:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> bandBrush1Style;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:41:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:42:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> bandBrush2Style;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:42:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:43:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> linePenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:43:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:45:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> ohlcUpWickPenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:45:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:46:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> ohlcDownWickPenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:46:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:48:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> candleUpWickPen;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:48:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:49:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> candleDownWickPen;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:49:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:50:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> candleUpBodyBrush;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:50:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:51:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> candleDownBodyBrush;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:51:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:54:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) SCITextFormattingStyle *axisTickLabelStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:54:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:55:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) SCITextFormattingStyle *axisTitleLabelStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:55:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:56:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> axisMajorGridLineBrush;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:56:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:57:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> axisMinorGridLineBrush;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:57:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:58:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> axisGridBandBrush;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:58:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:63:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> annotationLinePenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:63:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:64:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPointMarkerProtocol> annotationLineResizeMarker;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:64:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:65:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) SCITextFormattingStyle *annotationTextStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:65:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:66:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIColor *annotationTextBackgroundColor;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:66:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:67:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPointMarkerProtocol> annotationBoxPointMarkerStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:67:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:68:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> annotationBoxBorderPenStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:68:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:69:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIBrush2DProtocol> annotationBoxFillBrushStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:69:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:70:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) SCITextFormattingStyle *annotationAxisMarkerTextStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:70:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:71:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) id<SCIPen2DProtocol> annotationAxisMarkerLineStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:71:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:72:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIColor *annotationAxisMarkerBackgroundColor;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:72:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:73:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIColor *annotationAxisMarkerBorderColor;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:73:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:76:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) SCITooltipModifierStyle *modifierTooltipStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:76:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:77:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) SCICursorModifierStyle *modifierCursorStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:77:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:78:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) SCIRolloverModifierStyle *modifierRolloverStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:78:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:79:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIColor *modifierLegendBackgroundColor;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:79:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:80:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIColor *modifierLegendBorderColor;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:80:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:82:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) SCILegendCellStyle *modifierLegendCellStyle;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIThemeProviderProtocol.h:82:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:652:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SciChart.h:54:
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCINumericAxis.h:26:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) NSNumberFormatter *numberFormatter;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCINumericAxis.h:26:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:652:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SciChart.h:79:
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIChartSurface.h:72:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIFont *chartTitleFont;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIChartSurface.h:72:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIChartSurface.h:77:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIColor *chartTitleColor;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIChartSurface.h:77:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:652:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SciChart.h:82:
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIOpenGLRenderSurface.h:14:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIColor *backgroundColor;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIOpenGLRenderSurface.h:14:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:652:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SciChart.h:160:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCICursorModifierStyle.h:14:
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCITooltipModifierStyleBase.h:129:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) NSNumberFormatter *numberFormatter;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCITooltipModifierStyleBase.h:129:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCITooltipModifierStyleBase.h:134:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) NSDateFormatter *dateTimeFormatter;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCITooltipModifierStyleBase.h:134:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:652:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SciChart.h:171:
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIAxisInfo.h:32:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) NSNumberFormatter *numberFormatter;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIAxisInfo.h:32:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIAxisInfo.h:33:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) NSDateFormatter *dateTimeFormatter;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIAxisInfo.h:33:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:652:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SciChart.h:172:
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIAxisDataView.h:20:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) NSNumberFormatter *formatter;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCIAxisDataView.h:20:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:652:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SciChart.h:267:
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendModifier.h:100:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) NSArray <SCILegendItem *> *dataSource;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendModifier.h:100:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:652:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SciChart.h:270:
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SCIChart.framework/Headers/SCILegendCollectionModifier.h:45:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) SCILegendCellStyle *styleOfItemCell;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SCIChart.framework/Headers/SCILegendCollectionModifier.h:45:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:652:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SciChart.h:271:
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendCellStyle.h:25:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIFont *seriesNameFont;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendCellStyle.h:25:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendCellStyle.h:31:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIColor *seriesNameTextColor;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendCellStyle.h:31:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendCellStyle.h:37:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIImage *checkedBoxImage;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendCellStyle.h:37:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendCellStyle.h:43:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIImage *uncheckedBoxImage;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendCellStyle.h:43:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendCellStyle.h:55:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic) UIColor *borderColorMarkerView;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendCellStyle.h:55:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:652:
+In file included from /Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SciChart.h:272:
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendItem.h:28:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic, nullable) UIColor *markerColor;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendItem.h:28:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendItem.h:58:1: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed [-Wobjc-property-no-attribute]
+@property (nonatomic, nullable) NSString *seriesName;
+^
+/Users/Aloysha/Documents/work/SciChart.NativeScript.Examples/src/ScichartApp/platforms/ios/Pods/SciChart/SciChart.framework/Headers/SCILegendItem.h:58:1: warning: default property attribute 'assign' not appropriate for non-GC object [-Wobjc-property-no-attribute]
+In file included from umbrella.h:731:
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.1.sdk/usr/include/os/log.h:35:2: error: using os/log.h requires Xcode 8 or later
+#error using os/log.h requires Xcode 8 or later
+ ^
+144 warnings and 1 error generated.

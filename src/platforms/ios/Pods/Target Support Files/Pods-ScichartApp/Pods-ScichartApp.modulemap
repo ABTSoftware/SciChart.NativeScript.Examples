@@ -1,0 +1,6 @@
+framework module Pods_ScichartApp {
+  umbrella header "Pods-ScichartApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
