@@ -1,17 +1,3 @@
-// var LineChartView = UIView.extend({
-//     viewDidLoad() {
-//         UIViewController.prototype.viewDidLoad.apply(this, arguments);
-
-//         var label = new UILabel(CGRectMake(0, 0, 250, 60));
-//         label.text = "Hello, World!";
-
-//         label.center = this.view.center;
-//         label.textAlignment = NSTextAlignment.NSTextAlignmentCenter;
-
-//         this.view.addSubview(label);
-//     }
-// });
-
 require('SCIXyDataSeries,SCIUserDefinedDistributionCalculator,SCIEllipsePointMarker,SCIBrushSolid,SCIFastLineRenderableSeries,SCIPenSolid,SCIChartSurfaceView,NSLayoutConstraint,SCIChartSurface,SCITextFormattingStyle,SCIAxisStyle,SCINumericAxis,SCIDoubleRange,SCIXAxisDragModifier,SCIYAxisDragModifier,SCIPinchZoomModifier,SCIZoomExtentsModifier,SCIRolloverModifier,SCIModifierGroup');
 defineClass('LineChartView', {
     initializeSurfaceRenderableSeries: function() {
