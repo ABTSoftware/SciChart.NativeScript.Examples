@@ -44,7 +44,7 @@ defineClass('BubbleChartView', {
             self.initializeSurfaceData();
         }
 
-        return self;
+        return self;  
     },
     initializeSurfaceData: function() {
         surface = SCIChartSurface.alloc().initWithView(sciChartSurfaceView);
