@@ -1,99 +1,175 @@
-require('SCILegendCollectionModifier,UIColor,SCIXyDataSeries,SCIUserDefinedDistributionCalculator,SCIFastLineRenderableSeries,SCIPenSolid,SCIChartSurfaceView,NSLayoutConstraint,SCIChartSurface,SCIBrushSolid,SCITextFormattingStyle,SCIAxisStyle,SCINumericAxis');
-defineClass('LegendChartView', {
-    addModifiers: function() {
-        var legend = SCILegendCollectionModifier.alloc().initWithPosition_andOrientation(SCILegendPositionLeft | SCILegendPositionTop, SCILegendOrientationVertical);
-        surface.setChartModifier(legend);
-    },
-    initializeSurfaceRenderableSeries: function() {
-        self.attachRenderebleSeriesWithYValue_andColor_seriesName_isVisible(1000, UIColor.yellowColor(), "Curve A", YES);
-        self.attachRenderebleSeriesWithYValue_andColor_seriesName_isVisible(2000, UIColor.greenColor(), "Curve B", YES);
-        self.attachRenderebleSeriesWithYValue_andColor_seriesName_isVisible(3000, UIColor.redColor(), "Curve C", YES);
-        self.attachRenderebleSeriesWithYValue_andColor_seriesName_isVisible(4000, UIColor.blueColor(), "Curve D", NO);
-    },
-    attachRenderebleSeriesWithYValue_andColor_seriesName_isVisible: function(yValue, color, seriesName, isVisible) {
-        var dataCount = 10;
+r//var frame;
+//var chartView;
+//require("SCIDataSeries.h");
+var surface;
+var sciChartSurfaceView;
+function onPageLoaded(args) {
+     initializeSurfaceData();
+}
+exports.onPageLoaded = onPageLoaded;
+var constraints;
+// function addConstraints(constraints) {
 
-        var dataSeries1 = SCIXyDataSeries.alloc().initWithXType_YType(SCIDataType_Float, SCIDataType_Float);
+// }
 
-        var y = yValue;
+function creatingChart(args) {
+   var View = SCIChartSurfaceView.alloc().initWithFrame(CGRectMake( 0, 0, 414, 736 ));
+   sciChartSurfaceView = View;
+   sciChartSurfaceView.setTranslatesAutoresizingMaskIntoConstraints = false;
 
-        for (var i = 1; i <= dataCount; i++) {
-            var x = i;
-            y = yValue + y;
-            dataSeries1.appendX_Y(SCIGeneric(x), SCIGeneric(y));
-        }
+   args.view = sciChartSurfaceView;
+    var layout = {
+        "SciChart": sciChartSurfaceView
+    }; 
+    //var constraints = NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("|-(0)-[SciChart]-(0)-|", 0, 0, layout);
+   // constraints+= NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("V:|-(0)-[SciChart]-(0)-|", 0, 0, layout);
+            // self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("|-(0)-[SciChart]-(0)-|", 0, 0, layout));
+            // self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("V:|-(0)-[SciChart]-(0)-|", 0, 0, layout));
+   // args.view = constraints;
 
-        dataSeries1.setDataDistributionCalculator(SCIUserDefinedDistributionCalculator.new());
-        dataSeries1.setSeriesName(seriesName);
+    //initializeSurfaceData();
 
-        var renderableSeries1 = SCIFastLineRenderableSeries.new();
-        renderableSeries1.style().setLinePen(SCIPenSolid.alloc().initWithColor_Width(color, 0.7));
-        renderableSeries1.setXAxisId("xAxis");
-        renderableSeries1.setYAxisId("yAxis");
-        renderableSeries1.setDataSeries(dataSeries1);
-        renderableSeries1.setIsVisible(isVisible);
+           
+}
+exports.creatingChart = creatingChart;
 
-        surface.attachRenderableSeries(renderableSeries1);
-        surface.invalidateElement();
-    },
-    initWithFrame: function(frame) {
-        self = self.super().initWithFrame(frame);
+function initializeSurfaceData() {
+    surface = SCIChartSurface.alloc().initWithView(sciChartSurfaceView);
+    surface.setBackgroundBrush = SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c);
+    surface.setSeriesBackgroundBrush = new SCIBrushSolid(0xFF1e1c1c);
+    addAxes();
+    //addModifiers();
+    initializeSurfaceRenderableSeries();
 
-        if (self) {
-            var view = SCIChartSurfaceView.alloc().initWithFrame(frame);
-            sciChartSurfaceView = view;
-
-            sciChartSurfaceView.setTranslatesAutoresizingMaskIntoConstraints(NO);
-
-            self.addSubview(sciChartSurfaceView);
-            var layout = {
-                "SciChart": sciChartSurfaceView
-            };
-
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("|-(0)-[SciChart]-(0)-|", 0, 0, layout));
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("V:|-(0)-[SciChart]-(0)-|", 0, 0, layout));
-
-            self.initializeSurfaceData();
-        }
-
-        return self;
-    },
-    initializeSurfaceData: function() {
-        surface = SCIChartSurface.alloc().initWithView(sciChartSurfaceView);
-        surface.style().setBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
-        surface.style().setSeriesBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
-        self.addAxes();
-        self.addModifiers();
-        self.initializeSurfaceRenderableSeries();
-    },
-    addAxes: function() {
-        var majorPen = SCIPenSolid.alloc().initWithColorCode_Width(0xFF393532, 0.5);
+}
+  
+function addAxes()
+{
+    
+        var majorPen = SCIPenSolid.alloc().initWithColorCodeWidth(0xFF393532, 0.5);
         var gridBandPen = SCIBrushSolid.alloc().initWithColorCode(0xE1232120);
-        var minorPen = SCIPenSolid.alloc().initWithColorCode_Width(0xFF262423, 0.5);
+        var minorPen = SCIPenSolid.alloc().initWithColorCodeWidth(0xFF262423, 0.5);
+        var textFormatting = new SCITextFormattingStyle();
+        textFormatting.setFontSize = 16;
+        textFormatting.setFontName = "Helvetica";
+        textFormatting.setColorCode = 0xFFafb3b6;
+        var axisStyle = new SCIAxisStyle();
+        axisStyle.setMajorTickBrush = majorPen;
+        axisStyle.setGridBandBrush = gridBandPen;
+        axisStyle.setMajorGridLineBrush = majorPen;
+        axisStyle.setMinorTickBrush = minorPen;
+        axisStyle.setMinorGridLineBrush = minorPen;
+        axisStyle.setLabelStyle = textFormatting;
+        axisStyle.setDrawMinorGridLines = true;
+        axisStyle.setDrawMajorBands = true;
 
-        var textFormatting = SCITextFormattingStyle.alloc().init();
-        textFormatting.setFontSize(16);
-        textFormatting.setFontName("Helvetica");
-        textFormatting.setColorCode(0xFFafb3b6);
+        var axis =  SCINumericAxis.alloc().init();
+        axis.setStyle = axisStyle;
+        axis.setAxisId = "yAxis";
+      //  axis.setGrowBy(SCIDoubleRange.alloc().initWithMinMax(0.1, 0.1));
+         surface.attachAxis = (axis, IsXAxis = false);
+        //surface.IsXAxis = false;
 
-        var axisStyle = SCIAxisStyle.alloc().init();
-        axisStyle.setMajorTickBrush(majorPen);
-        axisStyle.setGridBandBrush(gridBandPen);
-        axisStyle.setMajorGridLineBrush(majorPen);
-        axisStyle.setMinorTickBrush(minorPen);
-        axisStyle.setMinorGridLineBrush(minorPen);
-        axisStyle.setLabelStyle(textFormatting);
-        axisStyle.setDrawMinorGridLines(YES);
-        axisStyle.setDrawMajorBands(YES);
+        axis = new SCINumericAxis();
+        axis.setAxisId = "xAxis";
+        axis.setStyle = axisStyle;
+     //   axis.setGrowBy = new SCIDoubleRange(0.1, 0.1);
+        surface.attachAxis = (axis, IsXAxis = true);
+        //surface.IsXAxis = true;
+}
 
-        var axis = SCINumericAxis.alloc().init();
-        axis.setStyle(axisStyle);
-        axis.setAxisId("yAxis");
-        surface.attachAxis_IsXAxis(axis, NO);
+function addModifiers() {
+    var xDragModifier = new SCIXAxisDragModifier();
+    xDragModifier.axisId = "xAxis";
+    xDragModifier.dragMode = SCIAxisDragMode_Scale;
+    xDragModifier.clipModeX = SCIZoomPanClipMode_None;
+    xDragModifier.setModifierName = "XAxis DragModifier";
 
-        axis = SCINumericAxis.alloc().init();
-        axis.setAxisId("xAxis");
-        axis.setStyle(axisStyle);
-        surface.attachAxis_IsXAxis(axis, YES);
-    },
-});
+    var yDragModifier = new SCIYAxisDragModifier();
+    yDragModifier.axisId = "yAxis";
+    yDragModifier.dragMode = SCIAxisDragMode_Pan;
+  //  yDragModifier.clipModeX = SCIZoomPanClipMode_None;
+    yDragModifier.setModifierName = "YAxis DragModifier";
+
+    var pzm = SCIPinchZoomModifier.alloc().init();
+    pzm.setModifierName = "PinchZoom Modifier";
+
+    var zem = SCIZoomExtentsModifier.alloc().init();
+    zem.setModifierName = "ZoomExtents Modifier";
+
+    var rollover = SCIRolloverModifier.alloc().init();
+    rollover.style.tooltipSize = CGSizeMake(200, 300);
+    rollover.setModifierName = "Rollover Modifier";
+
+    var gm = SCIModifierGroup.alloc().iniWithChildModifiers = [xDragModifier, yDragModifier, pzm, zem, rollover];
+  //  surface.chartModifier = gm;
+
+}
+// function initWithXYType(x, y) {
+//     x = SCIDataType_Float;
+//     y = SCIDataType_Float;
+// }
+function initializeSurfaceRenderableSeries()
+{
+    
+    var dataCount = 20;
+    
+    var priceDataSeries = SCIXyDataSeries.alloc().initWithXYType=(SCIDataType_Float, SCIDataType_Float);
+    //Getting Fourier dataSeries
+    for (var i = 0; i < dataCount; i++) {
+        var time = 10 * i /  dataCount;
+        var x = time;
+        var y = arc4random_uniform(20);
+        priceDataSeries.appendX = x;
+        priceDataSeries.appendY = y;
+    }
+
+    dataCount = 1000;
+    var fourierDataSeries = SCIXyDataSeries.alloc().initWithXYType =(SCIDataType_Float, SCIDataType_Float);
+
+    //Getting Fourier dataSeries
+    for (var i = 0; i < dataCount; i++) {
+        var time = 10 * i /  dataCount;
+        var x = time;
+        var y = 2 * sin(x) + 10;
+        fourierDataSeries.appendX = x
+        fourierDataSeries.appendy = y;
+    };
+
+     priceDataSeries.dataDistributionCalculator = SCIUserDefinedDistributionCalculator.alloc().init();
+
+     fourierDataSeries.dataDistributionCalculator = SCIUserDefinedDistributionCalculator.alloc().init();
+
+     var ellipsePointMarker = SCIEllipsePointMarker.alloc().init();
+     ellipsePointMarker.setDrawBorder = true;
+     ellipsePointMarker.setFillBrush = SCIBrushSolid.alloc().initWithColorCode(0xFFd6ffd7);
+     ellipsePointMarker.setHeight = 5;
+     ellipsePointMarker.setWidth = 5;
+
+     var priceRenderableSeries = SCIFastLineRenderableSeries.alloc().init();
+     var style = SCILineSeriesStyle.alloc().init(); 
+     priceRenderableSeries.style.setPointMarker = ellipsePointMarker;
+     priceRenderableSeries.style.setDrawPointMarkers = true;
+     priceRenderableSeries.style.setLinePen = (SCIPenSolid.alloc().initWithColorCodeWidth(0xFF99EE99, 0.7));
+     priceRenderableSeries.setXAxisId = "xAxis";
+     priceRenderableSeries.setYAxisId = "yAxis";
+     priceRenderableSeries.setDataSeries = priceDataSeries;
+     surface.attachRenderableSeries = priceRenderableSeries;
+
+    // var fourierRenderableSeries = SCIFastLineRenderableSeries.new();
+    // fourierRenderableSeries.style().setLinePen(SCIPenSolid.alloc().initWithColorCode_Width(0xFF4c8aff, 0.7));
+    // fourierRenderableSeries.setXAxisId("xAxis");
+    // fourierRenderableSeries.setYAxisId("yAxis");
+    // fourierRenderableSeries.setDataSeries(fourierDataSeries);
+    // surface.attachRenderableSeries(fourierRenderableSeries);
+
+     surface.invalidateElement();
+    
+    
+
+};
+
+exports.addModifiers = addModifiers;
+exports.addAxes = addAxes;
+exports.initializeSurfaceData = initializeSurfaceData;
+

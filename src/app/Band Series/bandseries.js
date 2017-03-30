@@ -1,6 +1,7 @@
 require('SCIXyyDataSeries,SCIUserDefinedDistributionCalculator,SCIBandRenderableSeries,SCIBrushSolid,SCIPenSolid,SCIChartSurfaceView,NSLayoutConstraint,SCIChartSurface,SCITextFormattingStyle,SCIAxisStyle,SCINumericAxis,SCIDoubleRange,SCIXAxisDragModifier,SCIYAxisDragModifier,SCIPinchZoomModifier,SCIZoomExtentsModifier,SCIRolloverModifier,SCIModifierGroup');
 defineClass('BandChartView', {
     createBandRenderableSeries: function() {
+        axis.setGrowBy(SCIDoubleRange.alloc().initWithMin_Max(SCIGeneric(0.05), SCIGeneric(0.05)));
         var xyyDataSeries = SCIXyyDataSeries.alloc().initWithXType_YType(SCIDataType_Double, SCIDataType_Double);
 
         xyyDataSeries.setDataDistributionCalculator(SCIUserDefinedDistributionCalculator.new());
@@ -78,7 +79,6 @@ defineClass('BandChartView', {
         var axis = SCINumericAxis.alloc().init();
         axis.setStyle(axisStyle);
         axis.setAxisId("yAxis");
-        axis.setGrowBy(SCIDoubleRange.alloc().initWithMin_Max(SCIGeneric(0.05), SCIGeneric(0.05)));
         surface.attachAxis_IsXAxis(axis, NO);
 
         axis = SCINumericAxis.alloc().init();
@@ -109,8 +109,8 @@ defineClass('BandChartView', {
 
         var gm = SCIModifierGroup.alloc().initWithChildModifiers([xDragModifier, yDragModifier, pzm, zem, rollover]);
         surface.setChartModifier(gm);
-
         self.createBandRenderableSeries();
+
 
         surface.invalidateElement();
     },

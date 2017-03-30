@@ -1,9 +1,15 @@
-require('SCIDoubleRange,SCIHeatMapDataSeries,SCIUserDefinedDistributionCalculator,SCIHeatMapRenderableSeries,SCIChartSurfaceView,NSLayoutConstraint,SCIChartSurface,SCIBrushSolid,SCIPenSolid,SCITextFormattingStyle,SCIAxisStyle,SCINumericAxis,SCIXAxisDragModifier,SCIYAxisDragModifier,SCIPinchZoomModifier,SCIZoomExtentsModifier,SCITooltipModifier,SCIModifierGroup,NSTimer');
-   
-    function initWithFrame(frame) {
-        self = self.super().initWithFrame(frame);
+var scichart = require("scichart-ui");
+var surface;
+var sciChartSurfaceView;
+// var frameworkBundle = NSBundle.bundleForClass(scichart.class);
+// frameworkBundle.loadNibNamedOwnerOptions("SCIAxisDataView.nib", scichart, null);
+function onPageLoaded(args) {
+     initializeSurfaceData();
+}
+exports.onPageLoaded = onPageLoaded;
 
-        if (self) {
+function creatingChart(args) {
+    var View = SCIChartSurfaceView.alloc().initWithFrame(CGRectMake( 0, 0, 414, 736 ));
             var view = SCIChartSurfaceView.alloc().init();
             sciChartSurfaceView = view;
 
@@ -14,55 +20,57 @@ require('SCIDoubleRange,SCIHeatMapDataSeries,SCIUserDefinedDistributionCalculato
                 "SciChart": sciChartSurfaceView
             };
 
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("|-(0)-[SciChart]-(0)-|", 0, 0, layout));
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("V:|-(0)-[SciChart]-(0)-|", 0, 0, layout));
-            scale = 0.1;
-        }
+        // self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("|-(0)-[SciChart]-(0)-|", 0, 0, layout));
+        // self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("V:|-(0)-[SciChart]-(0)-|", 0, 0, layout));
+        // scale = 0.1;
+}
 
-    }
-        surface = SCIChartSurface.alloc().initWithView(sciChartSurfaceView);
+function initializeSurfaceData() {
+    surface = SCIChartSurface.alloc().initWithView(sciChartSurfaceView);
+    surface.setBackgroundBrush = SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c);
+    surface.setSeriesBackgroundBrush = new SCIBrushSolid(0xFF1e1c1c);
+    addAxes();
+    getHeatmapRenderableSeries();
+    //addModifiers();
+    initializeSurfaceRenderableSeries();
 
-        surface.style().setSeriesBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
-        var gridBandPen = SCIBrushSolid.alloc().initWithColorCode(0xE1232120);
-        var minorPen = SCIPenSolid.alloc().initWithColorCode_Width(0xFF262423, 0.5);
-        surface.invalidateElement();
-        var textFormatting = SCITextFormattingStyle.alloc().init();
-        textFormatting.setFontName("Arial");
+}
 
-        axisStyle.setGridBandBrush(gridBandPen);
-        axisStyle.setMinorTickBrush(minorPen);
-        axisStyle.setLabelStyle(textFormatting);
-        axisStyle.setDrawMajorBands(YES);
-        var axis = SCINumericAxis.alloc().init();
-        axis.setStyle(axisStyle);
-        surface.attachAxis_IsXAxis(axis, NO);
+function addAxes()
+{        
+    var gridBandPen = SCIBrushSolid.alloc().initWithColorCode(0xE1232120);
+    var minorPen = SCIPenSolid.alloc().initWithColorCode_Width(0xFF262423, 0.5);
+    // surface.invalidateElement();
+    var textFormatting = SCITextFormattingStyle.alloc().init();
+    textFormatti.setFontName("Arial");
 
-        axis.setStyle(axisStyle);
-        axis.setGrowBy(SCIDoubleRange.alloc().initWithMin_Max(SCIGeneric(0.05), SCIGeneric(0.05)));
-        var xDragModifier = SCIXAxisDragModifier.new();
-        xDragModifier.setDragMode(SCIAxisDragMode_Scale);
-        var yDragModifier = SCIYAxisDragModifier.new();
-        yDragModifier.setAxisId("yAxis");
+    axisStyle.setGridBandBrush = gridBandPen;
+    axisStyle.setMinorTickBrush = minorPen;
+    axisStyle.setLabelStyle = textFormatting;
+    axisStyle.setDrawMajorBands= true;
+    var axis = SCINumericAxis.alloc().init();
+    axis.setStyle=axisStyle;
+    surface.attachAxis= (axis, IsXAxis=false);
 
-        var tooltip = SCITooltipModifier.alloc().init();
+    axis.setStyle(axisStyle);
+    axis.setGrowBy(SCIDoubleRange.alloc().initWithMin_Max(SCIGeneric(0.05), SCIGeneric(0.05)));
+    var xDragModifier = SCIXAxisDragModifier.new();
+    xDragModifier.setDragMode(SCIAxisDragMode_Scale);
+    var yDragModifier = SCIYAxisDragModifier.new();
+    yDragModifier.setAxisId("yAxis");
 
-        tooltip.setModifierName("ToolTip Modifier");
-        zem.setModifierName("ZoomExtents Modifier");
-        xDragModifier.setModifierName("XAxis Drag Modifier");
+    var tooltip = SCITooltipModifier.alloc().init();
 
+    tooltip.setModifierName("ToolTip Modifier");
+    zem.setModifierName("ZoomExtents Modifier");
+    xDragModifier.setModifierName("XAxis Drag Modifier");
+}
 
 
     
-    // willMoveToWindow: function(newWindow) {
-    // } 
-    // else {
-    //         timer.invalidate();
-    //     }
-    // },
-        return self;
-defineClass('HeatmapChartView', {
-    initializeSurfaceData: function() {
-    getHeatmapRenderableSeries: function() {
+    
+
+function  getHeatmapRenderableSeries() {
         surface.style().setBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
         increment = 1;
 
@@ -108,7 +116,7 @@ defineClass('HeatmapChartView', {
 
         return heatmapRenderableSeries;
         var zem = SCIZoomExtentsModifier.alloc().init();
-    },
+    
         var pzm = SCIPinchZoomModifier.alloc().init();
     updateHeatmapData: function(timer) {
         //    tooltip.style().tooltipSize() = CGSizeMake(100, NAN);
@@ -135,5 +143,6 @@ defineClass('HeatmapChartView', {
             }
             self.initializeSurfaceData();
         }
+ }
 
         //scale += 0.5;

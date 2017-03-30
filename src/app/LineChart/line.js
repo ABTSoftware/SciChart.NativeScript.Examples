@@ -14,7 +14,7 @@ JavaScript modules defined in other files.
 //var chartView;
 
 function onPageLoaded(args) {
-     initializeSurfaceData();
+     initializeSurfaceData();  
 }
 exports.onPageLoaded = onPageLoaded;
 
