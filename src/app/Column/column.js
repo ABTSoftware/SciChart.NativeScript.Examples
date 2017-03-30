@@ -1,59 +1,73 @@
-require('SCIXyDataSeries,DataManager,SCIFastColumnRenderableSeries,SCIUserDefinedDistributionCalculator,SCIChartSurfaceView,NSLayoutConstraint,SCIChartSurface,SCIBrushSolid,SCITextFormattingStyle,SCIPenSolid,SCIAxisStyle,SCINumericAxis,SCIDoubleRange,SCIDateTimeAxis,SCIXAxisDragModifier,SCIYAxisDragModifier,SCIPinchZoomModifier,SCIZoomExtentsModifier,SCIRolloverModifier,SCIModifierGroup,SCIBrushLinearGradient');
-defineClass('ColumnChartView', {
-    getColumnRenderableSeries_borderPen_order: function(fillBrush, borderPen, order) {
-        var columnDataSeries = SCIXyDataSeries.alloc().initWithXType_YType(SCIDataType_DateTime, SCIDataType_Float);
+var scichart = require("scichart-ui");
+var surface;
+var sciChartSurfaceView;
+// var frameworkBundle = NSBundle.bundleForClass(scichart.class);
+// frameworkBundle.loadNibNamedOwnerOptions("SCIAxisDataView.nib", scichart, null);
+function onPageLoaded(args) {
+     initializeSurfaceData();
+}
+exports.onPageLoaded = onPageLoaded;
+//var constraints;
+// function addConstraints(constraints) {
 
-        //Getting Fourier dataSeries
-        DataManager.loadDataFromFile_fileName_startIndex_increment_reverse(columnDataSeries, "ColumnData", order, 3, NO);
+// }
 
-        var columnRenderableSeries = SCIFastColumnRenderableSeries.alloc().init();
 
-        columnDataSeries.setDataDistributionCalculator(SCIUserDefinedDistributionCalculator.new());
+function creatingChart(args) {
+   var View = SCIChartSurfaceView.alloc().initWithFrame(CGRectMake( 0, 0, 414, 736 ));
+   sciChartSurfaceView = View;
+   sciChartSurfaceView.setTranslatesAutoresizingMaskIntoConstraints = false;
 
-        columnRenderableSeries.style().setFillBrush(fillBrush);
-        columnRenderableSeries.style().setBorderPen(borderPen);
-        columnRenderableSeries.style().setDataPointWidth(0.3);
+   args.view = sciChartSurfaceView;
+    var layout = {
+        "SciChart": sciChartSurfaceView
+    }; 
+   // var constraints = NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("|-(0)-[SciChart]-(0)-|", 0, 0, layout);
+   // constraints+= NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("V:|-(0)-[SciChart]-(0)-|", 0, 0, layout);
+            // self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("|-(0)-[SciChart]-(0)-|", 0, 0, layout));
+            // self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("V:|-(0)-[SciChart]-(0)-|", 0, 0, layout));
+   // args.view = constraints;
 
-        columnRenderableSeries.setXAxisId("xAxis");
-        columnRenderableSeries.setYAxisId("yAxis");
+    //initializeSurfaceData();
 
-        columnRenderableSeries.setDataSeries(columnDataSeries);
+           
+}
+exports.creatingChart = creatingChart;
 
-        return columnRenderableSeries;
-    },
-    initWithFrame: function(frame) {
-        self = self.super().initWithFrame(frame);
+function getColumnRenderableSeries_borderPen_order(fillBrush, borderPen, order) {
+    var columnDataSeries = SCIXyDataSeries.alloc().initWithXType_YType(SCIDataType_DateTime, SCIDataType_Float);
 
-        if (self) {
-            var view = SCIChartSurfaceView.alloc().init();
-            sciChartSurfaceView = view;
+    //Getting Fourier dataSeries
+    DataManager.loadDataFromFile_fileName_startIndex_increment_reverse(columnDataSeries, "ColumnData", order, 3, NO);
 
-            sciChartSurfaceView.setTranslatesAutoresizingMaskIntoConstraints(NO);
+    var columnRenderableSeries = SCIFastColumnRenderableSeries.alloc().init();
 
-            self.addSubview(sciChartSurfaceView);
-            var layout = {
-                "SciChart": sciChartSurfaceView
-            };
+    columnDataSeries.setDataDistributionCalculator(SCIUserDefinedDistributionCalculator.new());
 
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("|-(0)-[SciChart]-(0)-|", 0, 0, layout));
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("V:|-(0)-[SciChart]-(0)-|", 0, 0, layout));
+    columnRenderableSeries.style().setFillBrush(fillBrush);
+    columnRenderableSeries.style().setBorderPen(borderPen);
+    columnRenderableSeries.style().setDataPointWidth(0.3);
 
-            self.initializeSurfaceData();
-        }
+    columnRenderableSeries.setXAxisId("xAxis");
+    columnRenderableSeries.setYAxisId("yAxis");
 
-        return self;
-    },
-    initializeSurfaceData: function() {
+    columnRenderableSeries.setDataSeries(columnDataSeries);
+
+    return columnRenderableSeries;
+}
+   
+    
+function initializeSurfaceData() {
         surface.free();
         surface = SCIChartSurface.alloc().initWithView(sciChartSurfaceView);
 
-        surface.style().setBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
-        surface.style().setSeriesBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
+        surface.setBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
+        surface.setSeriesBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
 
         var textFormatting = SCITextFormattingStyle.alloc().init();
-        textFormatting.setFontSize(20);
-        textFormatting.setFontName("Helvetica");
-        textFormatting.setColorCode(0xFFFFFFFF);
+        textFormatting.setFontSize=(20);
+        textFormatting.setFontName=("Helvetica");
+        textFormatting.setColorCode=(0xFFFFFFFF);
 
         var majorPen = SCIPenSolid.alloc().initWithColorCode_Width(0xFF393532, 0.6);
         var gridBandPen = SCIBrushSolid.alloc().initWithColorCode(0xE1232120);
@@ -77,10 +91,10 @@ defineClass('ColumnChartView', {
 
         axis = SCIDateTimeAxis.alloc().init();
         axis.setAxisId("xAxis");
-        ((SCIDateTimeAxis * ) axis).setTextFormatting("dd/MM/yyyy");
+        //((var axis).setTextFormatting("dd/MM/yyyy");
         axis.setCursorTextFormatting("dd-MM-yyyy");
         axis.setStyle(axisStyle);
-        surface.attachAxis_IsXAxis(axis, YES);
+        surface.attachAxis_IsXAxis(axis,true);
         axis.setGrowBy(SCIDoubleRange.alloc().initWithMin_Max(SCIGeneric(0.1), SCIGeneric(0.1)));
 
         var xDragModifier = SCIXAxisDragModifier.new();
@@ -96,11 +110,11 @@ defineClass('ColumnChartView', {
         var zem = SCIZoomExtentsModifier.alloc().init();
         var rollover = SCIRolloverModifier.alloc().init();
 
-        rollover.setModifierName("Rollover Modifier");
-        zem.setModifierName("ZoomExtents Modifier");
-        pzm.setModifierName("PinchZoom Modifier");
-        yDragModifier.setModifierName("YAxis Drag Modifier");
-        xDragModifier.setModifierName("XAxis Drag Modifier");
+        rollover.setModifierName=("Rollover Modifier");
+        zem.setModifierName=("ZoomExtents Modifier");
+        pzm.setModifierName=("PinchZoom Modifier");
+        yDragModifier.setModifierName=("YAxis Drag Modifier");
+        xDragModifier.setModifierName=("XAxis Drag Modifier");
 
         var gm = SCIModifierGroup.alloc().initWithChildModifiers([xDragModifier, yDragModifier, pzm, zem, rollover]);
         surface.setChartModifier(gm);
@@ -122,5 +136,5 @@ defineClass('ColumnChartView', {
         surface.attachRenderableSeries(chart3);
 
         surface.invalidateElement();
-    },
-});
+
+}
