@@ -32,8 +32,7 @@ function creatingChart(args) {
            
 }
 
-defineClass('BandChartView', {
-    createBandRenderableSeries: function() {
+  function createBandRenderableSeries() {
         axis.setGrowBy(SCIDoubleRange.alloc().initWithMin_Max(SCIGeneric(0.05), SCIGeneric(0.05)));
         var xyyDataSeries = SCIXyyDataSeries.alloc().initWithXType_YType(SCIDataType_Double, SCIDataType_Double);
 
@@ -42,8 +41,8 @@ defineClass('BandChartView', {
         xyyDataSeries.setSeriesName("Bubble Series");
 
         for (var i = 0; i < 500; i++) {
-            var time = 10 * i / (double) 500;
-            var wn = 2 * M_PI / (500 / (double) 3);
+            var time = 10 * i /  500;
+            var wn = 2 * M_PI / (500 /  3);
 
             xyyDataSeries.appendX_Y1_Y2(SCIGeneric(time), SCIGeneric(0.03 * sin(i * wn + 4)), SCIGeneric(0.05 * sin(i * wn + 12)));
         }
@@ -67,17 +66,17 @@ defineClass('BandChartView', {
     function initializeSurfaceData() {
         surface = SCIChartSurface.alloc().initWithView(sciChartSurfaceView);
 
-        surface.style().setBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
-        surface.style().setSeriesBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
+        surface.setBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
+        surface.setSeriesBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
 
         var majorPen = SCIPenSolid.alloc().initWithColorCode_Width(0xFF393532, 0.6);
         var gridBandPen = SCIBrushSolid.alloc().initWithColorCode(0xE1232120);
         var minorPen = SCIPenSolid.alloc().initWithColorCode_Width(0xFF262423, 0.5);
 
         var textFormatting = SCITextFormattingStyle.alloc().init();
-        textFormatting.setFontSize(16);
-        textFormatting.setFontName("Arial");
-        textFormatting.setColorCode(0xFFafb3b6);
+        textFormatting.setFontSize=16;
+        textFormatting.setFontName="Arial";
+        textFormatting.setColorCode=0xFFafb3b6;
 
         var axisStyle = SCIAxisStyle.alloc().init();
         axisStyle.setMajorTickBrush(majorPen);
@@ -86,19 +85,19 @@ defineClass('BandChartView', {
         axisStyle.setMinorTickBrush(minorPen);
         axisStyle.setMinorGridLineBrush(minorPen);
         axisStyle.setLabelStyle(textFormatting);
-        axisStyle.setDrawMinorGridLines(YES);
-        axisStyle.setDrawMajorBands(YES);
+        axisStyle.setDrawMinorGridLines = true;
+        axisStyle.setDrawMajorBands = true;
 
         var axis = SCINumericAxis.alloc().init();
         axis.setStyle(axisStyle);
         axis.setAxisId("yAxis");
-        surface.attachAxis_IsXAxis(axis, NO);
+        surface.attachAxis_IsXAxis(axis, false);
 
         axis = SCINumericAxis.alloc().init();
         axis.setAxisId("xAxis");
         axis.setStyle(axisStyle);
         axis.setGrowBy(SCIDoubleRange.alloc().initWithMin_Max(SCIGeneric(0.05), SCIGeneric(0.05)));
-        surface.attachAxis_IsXAxis(axis, YES);
+        surface.attachAxis_IsXAxis(axis, false);
 
         var xDragModifier = SCIXAxisDragModifier.new();
         xDragModifier.setAxisId("xAxis");
@@ -122,9 +121,8 @@ defineClass('BandChartView', {
 
         var gm = SCIModifierGroup.alloc().initWithChildModifiers([xDragModifier, yDragModifier, pzm, zem, rollover]);
         surface.setChartModifier(gm);
-        self.createBandRenderableSeries();
+        createBandRenderableSeries();
 
 
         surface.invalidateElement();
-    },
-});
+    }
