@@ -1,4 +1,37 @@
-require('SCIXyyDataSeries,SCIUserDefinedDistributionCalculator,SCIBandRenderableSeries,SCIBrushSolid,SCIPenSolid,SCIChartSurfaceView,NSLayoutConstraint,SCIChartSurface,SCITextFormattingStyle,SCIAxisStyle,SCINumericAxis,SCIDoubleRange,SCIXAxisDragModifier,SCIYAxisDragModifier,SCIPinchZoomModifier,SCIZoomExtentsModifier,SCIRolloverModifier,SCIModifierGroup');
+var scichart = require("scichart-ui");
+var surface;
+var sciChartSurfaceView;
+// var frameworkBundle = NSBundle.bundleForClass(scichart.class);
+// frameworkBundle.loadNibNamedOwnerOptions("SCIAxisDataView.nib", scichart, null);
+function onPageLoaded(args) {
+     initializeSurfaceData();
+}
+exports.onPageLoaded = onPageLoaded;
+//var constraints;
+// function addConstraints(constraints) {
+
+// }
+
+function creatingChart(args) {
+   var View = SCIChartSurfaceView.alloc().initWithFrame(CGRectMake( 0, 0, 414, 736 ));
+   sciChartSurfaceView = View;
+   sciChartSurfaceView.setTranslatesAutoresizingMaskIntoConstraints = false;
+
+   args.view = sciChartSurfaceView;
+    var layout = {
+        "SciChart": sciChartSurfaceView
+    }; 
+   // var constraints = NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("|-(0)-[SciChart]-(0)-|", 0, 0, layout);
+   // constraints+= NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("V:|-(0)-[SciChart]-(0)-|", 0, 0, layout);
+            // self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("|-(0)-[SciChart]-(0)-|", 0, 0, layout));
+            // self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("V:|-(0)-[SciChart]-(0)-|", 0, 0, layout));
+   // args.view = constraints;
+
+    //initializeSurfaceData();
+
+           
+}
+
 defineClass('BandChartView', {
     createBandRenderableSeries: function() {
         axis.setGrowBy(SCIDoubleRange.alloc().initWithMin_Max(SCIGeneric(0.05), SCIGeneric(0.05)));
@@ -29,29 +62,9 @@ defineClass('BandChartView', {
         bandRenderableSeries.setDataSeries(xyyDataSeries);
 
         surface.attachRenderableSeries(bandRenderableSeries);
-    },
-    initWithFrame: function(frame) {
-        self = self.super().initWithFrame(frame);
-
-        if (self) {
-            var view = SCIChartSurfaceView.alloc().init();
-            sciChartSurfaceView = view;
-
-            sciChartSurfaceView.setTranslatesAutoresizingMaskIntoConstraints(NO);
-
-            self.addSubview(sciChartSurfaceView);
-            var layout = {
-                "SciChart": sciChartSurfaceView
-            };
-
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("|-(0)-[SciChart]-(0)-|", 0, 0, layout));
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("V:|-(0)-[SciChart]-(0)-|", 0, 0, layout));
-            self.initializeSurfaceData();
-        }
-
-        return self;
-    },
-    initializeSurfaceData: function() {
+    }
+    
+    function initializeSurfaceData() {
         surface = SCIChartSurface.alloc().initWithView(sciChartSurfaceView);
 
         surface.style().setBackgroundBrush(SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c));
