@@ -1,4 +1,4 @@
-r//var frame;
+//var frame;
 //var chartView;
 //require("SCIDataSeries.h");
 var surface;

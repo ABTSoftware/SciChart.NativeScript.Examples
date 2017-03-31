@@ -1,62 +1,70 @@
-require('SCIXyDataSeries,SCIXyScatterRenderableSeries,SCIUserDefinedDistributionCalculator,SCIEllipsePointMarker,SCIBrushSolid,SCIPenSolid,SCIChartSurfaceView,NSLayoutConstraint,SCIChartSurface,SCITextFormattingStyle,SCIAxisStyle,SCINumericAxis,SCIDoubleRange,SCIDateTimeAxis,SCIXAxisDragModifier,SCIYAxisDragModifier,SCIPinchZoomModifier,SCIZoomExtentsModifier,SCICursorModifier,SCIModifierGroup');
-defineClass('ScatterSeriesChartView', {
-    getScatterRenderableSeriesWithDetalization_Color_Negative: function(pointMarkerDetalization, color, negative) {
-        var scatterDataSeries = SCIXyDataSeries.alloc().initWithXType_YType(SCIDataType_DateTime, SCIDataType_Float);
+var scichart = require("scichart-ui");
+var surface;
+var sciChartSurfaceView;
 
-        //Getting Fourier dataSeries
-        for (var i = 0; i < 200; i++) {
-            var x = i;
-            var time = (i < 100) ? arc4random_uniform(x + 10) : arc4random_uniform(200 - x + 10);
-            var y = time * time * time;
-            if (negative) {
-                scatterDataSeries.appendX_Y(SCIGeneric(x), SCIGeneric(-y));
-            } else {
-                scatterDataSeries.appendX_Y(SCIGeneric(x), SCIGeneric(y));
-            }
+function onPageLoaded(args) {
+     initializeSurfaceData();
+}
+exports.onPageLoaded = onPageLoaded;
+
+function creatingChart(args) {
+   var View = SCIChartSurfaceView.alloc().initWithFrame(CGRectMake( 0, 0, 414, 736 ));
+   sciChartSurfaceView = View;
+   sciChartSurfaceView.setTranslatesAutoresizingMaskIntoConstraints = false;
+
+   args.view = sciChartSurfaceView;
+    var layout = {
+        "SciChart": sciChartSurfaceView
+    }; 
+             
+}
+exports.creatingChart = creatingChart;
+
+function initializeSurfaceData() {
+    surface = SCIChartSurface.alloc().initWithView(sciChartSurfaceView);
+    surface.setBackgroundBrush = SCIBrushSolid.alloc().initWithColorCode(0xFF1e1c1c);
+    surface.setSeriesBackgroundBrush = new SCIBrushSolid(0xFF1e1c1c);
+    addAxes();
+    //addModifiers();
+    initializeSurfaceRenderableSeries();
+
+}
+function getScatterRenderableSeriesWithDetalization_Color_Negative(pointMarkerDetalization, color, negative) {
+    var scatterDataSeries = SCIXyDataSeries.alloc().initWithXType_YType(SCIDataType_DateTime, SCIDataType_Float);
+
+    //Getting Fourier dataSeries
+    for (var i = 0; i < 200; i++) {
+        var x = i;
+        var time = (i < 100) ? arc4random_uniform(x + 10) : arc4random_uniform(200 - x + 10);
+        var y = time * time * time;
+        if (negative) {
+            scatterDataSeries.appendX_Y(SCIGeneric(x), SCIGeneric(-y));
+        } else {
+            scatterDataSeries.appendX_Y(SCIGeneric(x), SCIGeneric(y));
         }
+    }
 
-        var xyScatterRenderableSeries = SCIXyScatterRenderableSeries.alloc().init();
-        scatterDataSeries.setDataDistributionCalculator(SCIUserDefinedDistributionCalculator.new());
-        scatterDataSeries.setSeriesName((pointMarkerDetalization == 6) ? ((negative) ? "Negative Hex" : "Positive Hex") : ((negative) ? "Negative" : "Positive"));
+    var xyScatterRenderableSeries = SCIXyScatterRenderableSeries.alloc().init();
+    scatterDataSeries.setDataDistributionCalculator(SCIUserDefinedDistributionCalculator.new());
+    scatterDataSeries.setSeriesName((pointMarkerDetalization == 6) ? ((negative) ? "Negative Hex" : "Positive Hex") : ((negative) ? "Negative" : "Positive"));
 
-        var ellipsePointMarker = SCIEllipsePointMarker.alloc().init();
-        ellipsePointMarker.setDrawBorder(YES);
-        ellipsePointMarker.setFillBrush(SCIBrushSolid.alloc().initWithColorCode(color));
-        ellipsePointMarker.setBorderPen(SCIPenSolid.alloc().initWithColorCode_Width(0xFFFFFFFF, 0.1));
-        ellipsePointMarker.setDetalization(pointMarkerDetalization);
-        ellipsePointMarker.setHeight(6);
-        ellipsePointMarker.setWidth(6);
+    var ellipsePointMarker = SCIEllipsePointMarker.alloc().init();
+    ellipsePointMarker.setDrawBorder(YES);
+    ellipsePointMarker.setFillBrush(SCIBrushSolid.alloc().initWithColorCode(color));
+    ellipsePointMarker.setBorderPen(SCIPenSolid.alloc().initWithColorCode_Width(0xFFFFFFFF, 0.1));
+    ellipsePointMarker.setDetalization(pointMarkerDetalization);
+    ellipsePointMarker.setHeight(6);
+    ellipsePointMarker.setWidth(6);
 
-        xyScatterRenderableSeries.style().setPointMarker(ellipsePointMarker);
-        xyScatterRenderableSeries.setXAxisId("xAxis");
-        xyScatterRenderableSeries.setYAxisId("yAxis");
-        xyScatterRenderableSeries.setDataSeries(scatterDataSeries);
+    xyScatterRenderableSeries.style().setPointMarker(ellipsePointMarker);
+    xyScatterRenderableSeries.setXAxisId("xAxis");
+    xyScatterRenderableSeries.setYAxisId("yAxis");
+    xyScatterRenderableSeries.setDataSeries(scatterDataSeries);
 
-        return xyScatterRenderableSeries;
-    },
-    initWithFrame: function(frame) {
-        self = self.super().initWithFrame(frame);
-
-        if (self) {
-            var view = SCIChartSurfaceView.alloc().init();
-            sciChartSurfaceView = view;
-
-            sciChartSurfaceView.setTranslatesAutoresizingMaskIntoConstraints(NO);
-
-            self.addSubview(sciChartSurfaceView);
-            var layout = {
-                "SciChart": sciChartSurfaceView
-            };
-
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat_options_metrics_views("|-(0)-[SciChart]-(0)-|", 0, 0, layout));
-            self.addConstraints(NSLayoutConstr aint.constraintsWithVisualFormat_options_metrics_views("V:|-(0)-[SciChart]-(0)-|", 0, 0, layout));
-
-            self.initializeSurfaceData(); 
-        }
-
-        return self;
-    },
-    initializeSurfaceData: function() {
+    return xyScatterRenderableSeries;
+}
+    
+    function initializeSurfaceData() {
         surface.free();
         surface = SCIChartSurface.alloc().initWithView(sciChartSurfaceView);
 
