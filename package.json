@@ -1,0 +1,44 @@
+{
+    "name": "nativescript-scichart",
+    "version": "1.0.0",
+    "description": "SCIChart",
+    "main": "scichart.js",    
+    "nativescript": {
+        "platforms": {
+            "android": "2.0.0",
+            "ios": "2.0.0"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ABTSoftware/SciChart.NativeScript.Examples.git"
+    },
+    "keywords": [
+		"SciChart",
+		"SCI Chart",
+        "NativeScript",        
+        "chart",
+        "nativescript"
+    ],
+    "author": {
+        "name": "Nathanael Anderson",
+        "email": "nathan@master-technology.com"
+    },
+    "license": {
+        "type": "Apache 2.0"        
+    },
+    "bugs": {
+        "url": "https://github.com/ABTSoftware/SciChart.NativeScript.Examples/issues"
+    },
+    "homepage": "https://github.com/ABTSoftware/SciChart.NativeScript.Examples",
+    "readmeFilename": "README.md",
+    "scripts": {
+        "demo.ios": "npm run preparedemo && cd demo && tns emulate ios",
+        "demo.android": "npm run preparedemo && cd demo && tns run android",
+        "debug.ios": "npm run preparedemo && cd demo && tns debug ios --emulator",
+        "debug.android": "npm run preparedemo && cd demo && tns debug android --emulator",
+        "preparedemo": "cd demo && tns plugin remove nativescript-scichart && tns plugin add .. && tns install",
+        "setup": "cd demo && npm install && tns plugin add .. && cd ..",
+        "start": "npm run demo.android"
+    }
+}
