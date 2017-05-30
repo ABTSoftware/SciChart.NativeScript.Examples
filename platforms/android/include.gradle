@@ -1,0 +1,24 @@
+//default elements
+android {
+    productFlavors {
+        "nativescriptscichart" {
+            dimension "nativescriptscichart"
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://www.myget.org/F/abtsoftware/maven' }
+        mavenCentral()
+        jcenter()
+    }
+}
+
+dependencies {
+    compile 'com.scichart.library:charting:2.0.0.1844@aar'
+    compile 'com.scichart.library:core:2.0.0.1844@aar'
+    compile 'com.scichart.library:data:2.0.0.1844@aar'
+    compile 'com.scichart.library:drawing:2.0.0.1844@aar'
+    compile 'com.scichart.library:extensions:2.0.0.1844@aar'
+}
