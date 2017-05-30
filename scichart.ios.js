@@ -31,6 +31,7 @@ function SciChart() {
 __extends(SciChart, ContentView);
 
 Object.defineProperty(SciChart.prototype, "ios", {get: function() { return this._ios; }});
+Object.defineProperty(SciChart.prototype, "_nativeView", {get: function() { return this._ios; }});
 Object.defineProperty(SciChart.prototype, "xAxis", {get: function() { return this._xAxis; }, set: function(type) {
 	if (this._xAxis) {
 		this.removeAxis(this._xAxis);
