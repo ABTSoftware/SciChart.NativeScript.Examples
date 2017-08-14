@@ -20,11 +20,18 @@ function SciChart() {
 	this.nativeView.addSubview(this.surface);
 	console.log("set debugWhySciChartDoesntRender = true");
     this.surface.debugWhySciChartDoesntRender = true;
-	//this.nativeView.setTranslatesAutoresizingMaskIntoConstraints(false);
-	// console.log("set xAxes = null");
+
 	this.surface.xAxes.add(SCINumericAxis.alloc().init());
 	this.surface.yAxes.add(SCINumericAxis.alloc().init());
-	// this.surface.renderableSeries.add(SCIFastLineRenderableSeries.alloc().init());
+
+	let newData = SCIXyDataSeries.alloc().initWithXTypeYType(SCIDataType_Float, SCIDataType_Float);
+	for (let i=0;i<100 ;i++) {
+		newData.appendXY(SCIGeneric(i), SCIGeneric(i * Math.random()));
+	}
+
+	let renderableSeries = SCIFastMountainRenderableSeries.alloc().init();
+	renderableSeries.dataSeries = newData;
+	this.surface.renderableSeries.add(renderableSeries);
 	// this._chartType = "SCIFastLineRenderableSeries";
 	// this._data = null;
 	// This is used so that we don't have to re-parse all the data on a chart change
