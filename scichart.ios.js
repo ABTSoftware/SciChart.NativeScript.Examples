@@ -14,19 +14,22 @@ const ContentView = require('ui/content-view').ContentView;
 
 function SciChart() {
 	ContentView.apply(this, arguments);
-	this.nativeView = this._ios = new UIView(CGRectMake(0, 0, 0, 0));
+	this.nativeView = this._ios = new UIView(CGRectMake(0, 0, 400, 400));
 	this.surface = SCIChartSurface.alloc().initWithFrame(CGRectMake(0, 0, 800, 800));
-	this.surface.translatesAutoresizingMaskIntoConstraints = false;
+	this.surface.translatesAutoresizingMaskIntoConstraints = true;
 	this.nativeView.addSubview(this.surface);
+	console.log("set debugWhySciChartDoesntRender = true");
+    this.surface.debugWhySciChartDoesntRender = true;
 	//this.nativeView.setTranslatesAutoresizingMaskIntoConstraints(false);
-	this._xAxis = null;
-	this._yAxis = null;
-	this._renderSeries = null;
-	this._chartType = "SCIFastLineRenderableSeries";
-	this._data = null;
+	// console.log("set xAxes = null");
+	this.surface.xAxes.add(SCINumericAxis.alloc().init());
+	this.surface.yAxes.add(SCINumericAxis.alloc().init());
+	// this.surface.renderableSeries.add(SCIFastLineRenderableSeries.alloc().init());
+	// this._chartType = "SCIFastLineRenderableSeries";
+	// this._data = null;
 	// This is used so that we don't have to re-parse all the data on a chart change
 	// Technically it isn't needed other than for speed.
-	this._parsedData = null;
+	// this._parsedData = null;
 }
 __extends(SciChart, ContentView);
 
@@ -37,18 +40,18 @@ Object.defineProperty(SciChart.prototype, "xAxis", {get: function() { return thi
 		this.removeAxis(this._xAxis);
 	}
 	this._xAxis = this.addAxis("xAxis", type, {x: true});
-	if (this._renderSeries) {
-		this._renderSeries.xAxisId = "xAxis";
-	}
+	// if (this._renderSeries) {
+	// 	this._renderSeries.xAxisId = "xAxis";
+	// }
 }});
 Object.defineProperty(SciChart.prototype, "yAxis", {get: function() { return this._yAxis; }, set: function(type) {
 	if (this._yAxis) {
 		this.removeAxis(this._xAxis);
 	}
 	this._yAxis = this.addAxis("yAxis", type, {x: false});
-	if (this._renderSeries) {
-		this._renderSeries.yAxisId = "yAxis";
-	}
+	// if (this._renderSeries) {
+	// 	this._renderSeries.yAxisId = "yAxis";
+	// }
 
 }});
 Object.defineProperty(SciChart.prototype, "title", {get: function() { return this._title; }, set: function(title) {
@@ -67,7 +70,7 @@ Object.defineProperty(SciChart.prototype, "chart", {get: function() { return thi
 Object.defineProperty(SciChart.prototype, "data", {get: function() { return this._data;}, set: function(data) { this._setData(data); }});
 
 SciChart.prototype._setData = function(data) {
-	let newData = SCIXyDataSeries.alloc().initWithXTypeYTypeSeriesType(SCIDataType_Float, SCIDataType_Float, SCITypeOfDataSeries_DefaultType);
+	let newData = SCIXyDataSeries.alloc().initWithXTypeYType(SCIDataType_Float, SCIDataType_Float);
 	for (let i=0;i<data.length;i++) {
 		newData.appendXY(SCIGeneric(data[i].x), SCIGeneric(data[i].y));
 		const n = SCIGeneric(data[i].x);
@@ -97,14 +100,14 @@ SciChart.prototype._setupRendering = function() {
 		}
 		this._renderSeries.strokeStyle = SCISolidPenStyle.alloc().initWithColorCodeWithThickness(0xFF00FF00,2.0);
 
-		if (this._xAxis) {
-			console.log("Setting xAxis");
-			this._renderSeries.xAxisId = this._xAxis.axisId;
-		}
-		if (this._yAxis) {
-			console.log("Setting yAxis");
-			this._renderSeries.yAxisId = this._yAxis.axisId;
-		}
+		// if (this._xAxis) {
+		// 	console.log("Setting xAxis");
+		// 	this._renderSeries.xAxisId = this._xAxis.axisId;
+		// }
+		// if (this._yAxis) {
+		// 	console.log("Setting yAxis");
+		// 	this._renderSeries.yAxisId = this._yAxis.axisId;
+		// }
 		//console.dump(this.surface.prototype);
 		this.surface.renderableSeries = this._renderSeries;
 	}
@@ -123,63 +126,63 @@ SciChart.prototype._setupRendering = function() {
 
 };
 
-SciChart.prototype.removeAxis = function(axis) {
-    this.surface.detachAxis(axis);
-};
+// SciChart.prototype.removeAxis = function(axis) {
+//     // this.surface.detachAxis(axis);
+// };
 
 
-SciChart.prototype.addAxis = function(id, type, parameters) {
-	let axis = null;
-  switch (type) {
-	  case this.AXIS.SCICategoryDateTimeAxis:
-	  		axis = SCICategoryDateTimeAxis.alloc().init();
-	  		break;
-	  case this.AXIS.SCIDateTimeAxis:
-	  		axis = SCIDateTimeAxis.alloc().init();
-	  		break;
-	  case this.AXIS.SCILogarithmicAxis:
-	  		axis = SCILogarithmicAxis.alloc().init();
-		  break;
-	  case this.AXIS.SCINumericAxis: // jshint ignore:line
-	  default:
-	  		axis = SCINumericAxis.alloc().init();
-	  		break;
-  }
-  axis.axisId = id;
-  if (parameters.x) {
-	  axis.axisAlignment = SCIAxisAlignment_Left;
-	  axis.axisTitle = "X-Axis";
-  } else {
-	  axis.axisAlignment = SCIAxisAlignment_Top;
-	  axis.axisTitle = "Y-Axis";
-  }
-  let textFormatting = SCITextFormattingStyle.alloc().init();
-  textFormatting.fontSize = 12;
+// SciChart.prototype.addAxis = function(id, type, parameters) {
+// 	let axis = null;
+//   switch (type) {
+// 	  case this.AXIS.SCICategoryDateTimeAxis:
+// 	  		axis = SCICategoryDateTimeAxis.alloc().init();
+// 	  		break;
+// 	  case this.AXIS.SCIDateTimeAxis:
+// 	  		axis = SCIDateTimeAxis.alloc().init();
+// 	  		break;
+// 	  case this.AXIS.SCILogarithmicAxis:
+// 	  		axis = SCILogarithmicAxis.alloc().init();
+// 		  break;
+// 	  case this.AXIS.SCINumericAxis: // jshint ignore:line
+// 	  default:
+// 	  		axis = SCINumericAxis.alloc().init();
+// 	  		break;
+//   }
+//   axis.axisId = id;
+//   if (parameters.x) {
+// 	  axis.axisAlignment = SCIAxisAlignment_Left;
+// 	  axis.axisTitle = "X-Axis";
+//   } else {
+// 	  axis.axisAlignment = SCIAxisAlignment_Top;
+// 	  axis.axisTitle = "Y-Axis";
+//   }
+//   let textFormatting = SCITextFormattingStyle.alloc().init();
+//   textFormatting.fontSize = 12;
 
-  axis.labelStyle = textFormatting;
+//   axis.labelStyle = textFormatting;
 
-  if (parameters.x) {
-  	this.surface.xAxis = axis;
-  } else {
-  	this.surface.yAxis = axis;
-  }
-  return axis;
-};
+//   if (parameters.x) {
+//   	this.surface.xAxis = axis;
+//   } else {
+//   	this.surface.yAxis = axis;
+//   }
+//   return axis;
+// };
 
 
 
-SciChart.AXIS = SciChart.prototype.AXIS = {
-	SCILogarithmicAxis: "SCILogarithmicAxis",
-	SCINumericAxis: "SCINumericAxis",
-	SCIDateTimeAxis: "SCIDateTimeAxis",
-	SCICategoryDateTimeAxis: "SCICategoryDateTimeAxis"
-};
+// SciChart.AXIS = SciChart.prototype.AXIS = {
+// 	SCILogarithmicAxis: "SCILogarithmicAxis",
+// 	SCINumericAxis: "SCINumericAxis",
+// 	SCIDateTimeAxis: "SCIDateTimeAxis",
+// 	SCICategoryDateTimeAxis: "SCICategoryDateTimeAxis"
+// };
 
-SciChart.CHART = SciChart.prototype.CHART = {
-	SCIFastLineRenderableSeries: "SCIFastLineRenderableSeries",
-	SCIFastMountainRenderableSeries: "SCIFastMountainRenderableSeries",
-	SCIFastColumnRenderableSeries: "SCIFastColumnRenderableSeries"
-};
+// SciChart.CHART = SciChart.prototype.CHART = {
+// 	SCIFastLineRenderableSeries: "SCIFastLineRenderableSeries",
+// 	SCIFastMountainRenderableSeries: "SCIFastMountainRenderableSeries",
+// 	SCIFastColumnRenderableSeries: "SCIFastColumnRenderableSeries"
+// };
 
 
 function pointerTo(type, value) {
